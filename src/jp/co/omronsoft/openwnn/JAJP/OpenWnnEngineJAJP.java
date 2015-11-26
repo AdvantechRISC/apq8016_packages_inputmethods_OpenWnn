@@ -139,7 +139,7 @@ public class OpenWnnEngineJAJP implements WnnEngine {
                 writableDictionaryName );
         if (!mDictionaryJP.isActive()) {
             mDictionaryJP = new OpenWnnDictionaryImpl(
-                    "/system/lib/libWnnJpnDic.so",
+                    "libWnnJpnDic.so",
                     writableDictionaryName );
         }
 

@@ -353,7 +353,7 @@ public class OpenWnnDictionaryImpl implements WnnDictionary {
      */
     public void setInUseState( boolean flag ) {
         if( flag ) {
-            if( mDbDic == null ) {
+            if( mDbDic == null && OpenWnn.getCurrentIme() != null ) {
                 mDbOpenHelper = new OpenWnnSQLiteOpenHelper(OpenWnn.getCurrentIme(), mDicFilePath);
                 mDbDic = mDbOpenHelper.getWritableDatabase();
             }
