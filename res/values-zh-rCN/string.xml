@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Copyright (c) 2015-2016 Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+<!--
  Copyright (C) 2008-2012  OMRON SOFTWARE Co., Ltd.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -87,7 +92,7 @@
     <string name="preference_user_dictionary_clear_user_summary">清空用户词典的内容。</string>
 
     <!-- Dialog Messages -->
-    <string name="dialog_button_ok">OK</string>
+    <string name="dialog_button_ok">确定</string>
     <string name="dialog_button_cancel">取消</string>
     <string name="dialog_button_close">关闭</string>
 
