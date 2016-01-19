@@ -40,6 +40,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.KeyCharacterMap;
 import android.text.method.MetaKeyKeyListener;
+import android.text.TextUtils;
 
 import jp.co.omronsoft.openwnn.BaseInputView;
 import jp.co.omronsoft.openwnn.OpenWnnControlPanelJAJP;
@@ -2995,10 +2996,13 @@ public class OpenWnnJAJP extends OpenWnn {
 
         int composingLength = mComposingText.toString(mTargetLayer).length();
         CharSequence seq = mInputConnection.getTextBeforeCursor(mPrevCommitText.length() + composingLength, 0);
-        seq = seq.subSequence(0, seq.length() - composingLength);
-        if (!seq.equals(mPrevCommitText.toString())) {
-            mPrevCommitCount = 0;
-            clearCommitInfo();
+        // The seq may be null.
+        if (!TextUtils.isEmpty(seq)) {
+            seq = seq.subSequence(0, seq.length() - composingLength);
+            if (!seq.equals(mPrevCommitText.toString())) {
+                mPrevCommitCount = 0;
+                clearCommitInfo();
+            }
         }
     }
 
