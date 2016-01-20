@@ -492,7 +492,7 @@ public class OpenWnnEngineJAJP implements WnnEngine {
     /** @see jp.co.omronsoft.openwnn.WnnEngine#learn */
     public boolean learn(WnnWord word) {
         int ret = -1;
-        if (word.partOfSpeech.right == 0) {
+        if (word.partOfSpeech == null || word.partOfSpeech.right == 0) {
             word.partOfSpeech = mDictionaryJP.getPOS(WnnDictionary.POS_TYPE_MEISI);
         }
 
@@ -527,7 +527,7 @@ public class OpenWnnEngineJAJP implements WnnEngine {
     /** @see jp.co.omronsoft.openwnn.WnnEngine#addWord */
     public int addWord(WnnWord word) {
         mDictionaryJP.setInUseState( true );
-        if (word.partOfSpeech.right == 0) {
+        if (word.partOfSpeech == null || word.partOfSpeech.right == 0) {
             word.partOfSpeech = mDictionaryJP.getPOS(WnnDictionary.POS_TYPE_MEISI);
         }
         mDictionaryJP.addWordToUserDictionary(word);
